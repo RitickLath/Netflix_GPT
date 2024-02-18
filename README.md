@@ -1,8 +1,18 @@
-# React + Vite
+# FEATURES
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Login/Sign Up
 
-Currently, two official plugins are available:
+   1. sign in / sign up form
+   2. redirect to browser page
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. Browser (After authentication)
+
+   1. Header
+   2. Main Movies
+      1. Tailer in bg
+      2. title and description
+      3. Movie suggestion (Movie list \* n)
+
+3. Netflix GPT
+   1. Search bar
+   2. Movie Suggestions
