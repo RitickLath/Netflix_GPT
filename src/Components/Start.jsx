@@ -1,21 +1,28 @@
 import React from "react";
 import HomeHeader from "./Home/HomeHeader";
-import Home_Login from "./Home/Home_Login";
+import MemberShip from "./Home/MemberShip";
 import Background from "./Home/Background";
 import { Link } from "react-router-dom";
+import FAQs from "./Home/FAQs";
+import FooterH from "./Home/FooterH";
 
 const Start = () => {
   return (
     <>
-      <div className="bg-gradient-to-bl from-black z-10 border-2 w-screen h-screen">
-        <HomeHeader />
-        <Link to="/login">
-          <button className="absolute z-50 right-0 my-5 mx-8 lg:mx-44 bg-[#C11119] px-4 py-1 rounded-md text-white font-[5px]">
-            Sign In
-          </button>
-        </Link>
-        <Background />
-        <Home_Login />
+      <div className="bg-gradient-to-bl from-black w-screen h-screen overflow-x-hidden">
+        <div className="w-full relative h-[100%] bg-transparent">
+          <HomeHeader />
+          <Link to="/login">
+            <button className="absolute z-5 right-0 my-5 mx-8 lg:mx-44 bg-[#C11119] px-4 py-1 rounded-md text-white font-[5px]">
+              Sign In
+            </button>
+          </Link>
+          <Background />
+          <MemberShip />
+          
+        </div>
+        <FAQs />
+        <FooterH />
       </div>
     </>
   );
