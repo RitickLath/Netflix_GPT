@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Home_Login = () => {
+  const [input, setInput] = useState("");
+  const [message, setMessage] = useState(null);
+  const navigate = useNavigate();
+
   return (
-    <div>
-      <div className="flex justify-center mt-[25%] lg:mt-[22%]">
+    <div className="">
+      <div className="flex justify-center mt-[15%] lg:mt-[12%] ">
         <div className="z-10  text-white">
           {/* text */}
           <div>
@@ -26,17 +32,28 @@ const Home_Login = () => {
           <div className="text-center  mt-8 lg:flex md:flex md:justify-center lg:justify-center">
             <form className="" action="">
               <input
-                className="bg-gradient-to-l from-[#201e1e] to-110% w-[350px] lg:w-[400px] outline-none bg-transparent border-[1px] border-gray-300 px-4 py-3 lg:py-4 rounded-md text-normal"
+                value={input}
+                onChange={(e) => {
+                  setInput(e.target.value);
+                }}
+                //
+                className={` bg-gradient-to-l from-[#201e1e] to-110% w-[350px] lg:w-[400px] outline-none bg-transparent border-[1.5px] border-gray-300 px-4 py-3 lg:py-4 rounded-md text-normal ${
+                  /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(
+                    input
+                  )
+                    ? "border-[#688962] bg-transparent"
+                    : "border-[white]"
+                } `}
                 type="email"
+                required
                 placeholder="Email address"
               />
+              <div>
+                <button onClick={() => {/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(input) && navigate("/signup")}} className="mt-2 mx-2 w-[160px] rounded-md text-2xl font-semibold px-3 py-2 md:py-3 lg:py-3 bg-[#C11119]">
+                  Get Started
+                </button>
+              </div>
             </form>
-
-            <div>
-              <button className="mt-2 mx-2 w-[160px] rounded-md text-2xl font-semibold px-3 py-2 md:py-3 lg:py-3 bg-[#C11119]">
-                Get Started
-              </button>
-            </div>
           </div>
         </div>
       </div>

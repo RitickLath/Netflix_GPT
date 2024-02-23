@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { validate } from "../utils/Validation";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import {app} from "../utils/firebase"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { app } from "../utils/firebase";
 
 const auth = getAuth(app);
 
@@ -18,17 +18,22 @@ const SignIn = () => {
     setvalid(validate(email.current.value, password.current.value));
 
     if (validate(email.current.value, password.current.value) == null) {
-      console.log("ll")
-      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      console.log("ll");
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed up
-          alert("user added");
+          alert("user Signed In");
           const user = userCredential.user;
           // ...
         })
         .catch((error) => {
           console.log(error);
           const errorCode = error.code;
+          alert("Incorrect I'd or Password");
           const errorMessage = error.message;
           // ..
         });
@@ -44,6 +49,7 @@ const SignIn = () => {
             <div>
               <input
                 ref={email}
+                required
                 className="px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
                 type="email"
                 placeholder="Email or phone number"
@@ -52,6 +58,7 @@ const SignIn = () => {
             <div>
               <input
                 ref={password}
+                required
                 className="px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
                 type="password"
                 placeholder="Password"

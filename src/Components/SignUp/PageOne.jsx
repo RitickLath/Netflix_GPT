@@ -1,7 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FooterS from "./FooterS";
+import { useNavigate } from "react-router-dom";
 
 const PageOne = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
@@ -32,11 +36,17 @@ const PageOne = () => {
             Netflix is personalised for you. Create a password to watch on any
             device at any time.
           </p>
-          <button className="mt-3 w-[35%] rounded-md py-3 text-xl font-semibold text-white px-3 bg-red-700">
-            <Link>Next</Link>
+          <button
+            onClick={() => {
+              navigate("/signup/regform");
+            }}
+            className="mt-3 w-[300px] rounded-sm py-3 text-2xl font-semibold text-white px-3 bg-[#F6121D]"
+          >
+            Next
           </button>
         </div>
       </div>
+      <FooterS />
     </>
   );
 };
