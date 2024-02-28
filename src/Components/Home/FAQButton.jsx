@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 
-const FAQButton = ({ question, answer, key }) => {
+const FAQButton = ({ question, answer }) => {
   const [selected, setelected] = useState(false);
   
   return (

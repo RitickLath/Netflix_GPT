@@ -1,27 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { app } from "../utils/firebase";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import FooterS from "./FooterS";
 import { useNavigate } from "react-router-dom";
+import UserContext from "../../Context/UserContext";
 
 const auth = getAuth(app);
 
 const Pagetwo = () => {
+  const [name, setName] = useState("");
   const [gmail, setgmail] = useState("");
   const [Password, setpassword] = useState("");
   const [userAdded, setUserAdded] = useState(false);
   const [message, setmessage] = useState(null);
   const navigate = useNavigate();
+  const { login, setlogin } = useContext(UserContext);
 
   const addUser = () => {
     createUserWithEmailAndPassword(auth, gmail, Password)
       .then((userCredential) => {
         setUserAdded(true);
-        //alert("User Added");
-
-        navigate("/signup/regform/paymentpicker");
         const user = userCredential.user;
+        setlogin({ name: name, gmail: gmail });
+        // console.log(login);
+        navigate("/signup/regform/paymentpicker");
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -65,6 +68,21 @@ const Pagetwo = () => {
             action=""
           >
             <input
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              type="text"
+              required
+              placeholder="Enter your Name"
+              className={`outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
+                /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(gmail)
+                  ? "border-[#688962]"
+                  : "border-[red]"
+              } `}
+            />
+
+            <input
               value={gmail}
               onChange={(e) => {
                 setgmail(e.target.value);
@@ -74,7 +92,7 @@ const Pagetwo = () => {
               name=""
               id=""
               placeholder="Enter your Email"
-              className={`outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
+              className={`mt-3 outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
                 /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(gmail)
                   ? "border-[#688962]"
                   : "border-[red]"

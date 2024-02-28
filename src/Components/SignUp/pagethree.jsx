@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterS from "./FooterS";
 
 const Pagethree = () => {
+  const navigate = useNavigate();
+
+  const browse = () => {
+    navigate("/browse")
+  };
+
   return (
     <>
       <div>
@@ -37,6 +43,12 @@ const Pagethree = () => {
             </button>
             <button className="text-left mt-3 w-[450px] rounded-sm py-3 text-xl px-3 border-2">
               UPI Autopay
+            </button>
+            <button
+              onClick={browse}
+              className="text-center mt-3 w-[450px] rounded-sm py-3 text-xl px-3 border-2 bg-[#D9242F] text-white"
+            >
+              Continue without Subscription
             </button>
           </div>
         </div>

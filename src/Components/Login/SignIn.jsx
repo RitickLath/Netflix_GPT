@@ -1,14 +1,16 @@
-import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useRef, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { validate } from "../utils/Validation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../utils/firebase";
+import UserContext from "../../Context/UserContext";
 
 const auth = getAuth(app);
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [learnMore, setLearnMore] = useState(false);
-
+  const { login, setlogin } = useContext(UserContext);
   const email = useRef();
   const password = useRef();
   const [valid, setvalid] = useState(null);
@@ -18,7 +20,7 @@ const SignIn = () => {
     setvalid(validate(email.current.value, password.current.value));
 
     if (validate(email.current.value, password.current.value) == null) {
-      console.log("ll");
+      // console.log("ll");
       signInWithEmailAndPassword(
         auth,
         email.current.value,
@@ -28,6 +30,9 @@ const SignIn = () => {
           // Signed up
           alert("user Signed In");
           const user = userCredential.user;
+          // console.log(user);
+          setlogin({ name: email.current.value, gmail: email.current.value });
+          navigate("/browse");
           // ...
         })
         .catch((error) => {
