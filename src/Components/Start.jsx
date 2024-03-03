@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import HomeHeader from "./Home/HomeHeader";
 import MemberShip from "./Home/MemberShip";
 import Background from "./Home/Background";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FAQs from "./Home/FAQs";
 import FooterH from "./Home/FooterH";
+import UserContext from "../Context/UserContext";
+import OnAuth from "./utils/OnAuth";
 
 const Start = () => {
   return (
     <>
+      <OnAuth />
       <div className="bg-gradient-to-bl from-black w-screen h-screen overflow-x-hidden">
         <div className="w-full relative h-[100%] bg-transparent">
           <HomeHeader />
@@ -19,7 +22,6 @@ const Start = () => {
           </Link>
           <Background />
           <MemberShip />
-          
         </div>
         <FAQs />
         <FooterH />

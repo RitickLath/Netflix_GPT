@@ -5,38 +5,45 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import FooterS from "./FooterS";
 import { useNavigate } from "react-router-dom";
 import UserContext from "../../Context/UserContext";
+import OnAuth from "../utils/OnAuth";
 
 const auth = getAuth(app);
 
 const Pagetwo = () => {
+  // Navigate
+  const navigate = useNavigate();
+
+  // User data state
   const [name, setName] = useState("");
   const [gmail, setgmail] = useState("");
   const [Password, setpassword] = useState("");
-  const [userAdded, setUserAdded] = useState(false);
-  const [message, setmessage] = useState(null);
-  const navigate = useNavigate();
-  const { login, setlogin } = useContext(UserContext);
+
+  //
+  const { user, setUser } = useContext(UserContext);
+  const { islogin, setIslogin } = useContext(UserContext);
 
   const addUser = () => {
     createUserWithEmailAndPassword(auth, gmail, Password)
       .then((userCredential) => {
-        setUserAdded(true);
-        const user = userCredential.user;
-        setlogin({ name: name, gmail: gmail });
-        // console.log(login);
+        const userdata = userCredential.user;
+        // make the islogin true
+        setUser([gmail, name]);
+        setIslogin(true);
+        // navigate
         navigate("/signup/regform/paymentpicker");
       })
       .catch((error) => {
         const errorCode = error.code;
-        setUserAdded(false);
         const errorMessage = error.Message;
-        setmessage(errorCode + " - " + errorMessage);
-        //alert("Please fill in your credentials accurately and completely.");
+        // make the islogin false in store
+        console.log(errorCode + " - " + errorMessage);
+        setIslogin(false);
       });
   };
 
   return (
     <div>
+      <OnAuth />
       <div className="">
         <div className="flex justify-between">
           <img
@@ -122,7 +129,7 @@ const Pagetwo = () => {
                 !Password == "" &&
                 "Password must contain 8-15 characters, an uppercase, lowercase, digit, and special character."}
             </p>
-            <p className="text-left text-sm mt-1 text-[#D04B51]">{message}</p>
+            <p className="text-left text-sm mt-1 text-[#D04B51]">{}</p>
             <button
               onClick={addUser}
               className="mt-3 w-[35%] rounded-md py-3 text-xl font-semibold text-white px-3 bg-red-700"

@@ -1,9 +1,7 @@
-import React from 'react'
+import React, { useContext } from "react";
 
 const Browse1 = () => {
-  return (
-    <div>Browse1</div>
-  )
-}
+  return <div></div>;
+};
 
-export default Browse1
+export default Browse1;

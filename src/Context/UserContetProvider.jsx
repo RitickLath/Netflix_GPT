@@ -3,11 +3,11 @@ import { useState } from "react";
 import UserContext from "./UserContext";
 
 const UserContetProvider = ({ children }) => {
-  const [user, setUser] = useState([{ name: "Email", id: 1 }]);
-  const [login, setlogin] = useState(null);
+  const [user, setUser] = useState(); // to store logedin data
+  const [islogin, setIslogin] = useState(false);
 
   return (
-    <UserContext.Provider value={{ user, setUser, login , setlogin }}>
+    <UserContext.Provider value={{ user, setUser, islogin , setIslogin }}>
       {children}
     </UserContext.Provider>
   );

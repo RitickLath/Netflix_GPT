@@ -1,5 +1,10 @@
-import React from "react";
-import { RouterProvider, createBrowserRouter, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Start from "./Start";
 import Login from "./Login";
 import PageOne from "./SignUp/PageOne";
@@ -7,16 +12,14 @@ import Pagetwo from "./SignUp/Pagetwo";
 import Pagethree from "./SignUp/pagethree";
 import SignIn from "./Login/SignIn";
 import Browse from "./Browse/Browse";
-import Browse1 from "./Browse/Browse1";
-import Browse2 from "./Browse/Browse2";
-import Browse3 from "./Browse/Browse3";
-import Browse4 from "./Browse/Browse4";
+
+import UserContext from "../Context/UserContext";
 
 const Body = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-
+      
       children: [
         {
           path: "/",
@@ -50,13 +53,9 @@ const Body = () => {
       path: "/browse",
       children: [
         { path: "/browse", element: <Browse /> },
-        { path: "/browse/1", element: <Browse1 /> },
-        { path: "/browse/2", element: <Browse2 /> },
-        { path: "/browse/3", element: <Browse3 /> },
-        { path: "/browse/4", element: <Browse4 /> },
+        
       ],
-    }
-    
+    },
   ]);
 
   return (

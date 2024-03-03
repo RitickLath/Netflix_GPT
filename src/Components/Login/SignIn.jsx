@@ -4,23 +4,30 @@ import { validate } from "../utils/Validation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "../utils/firebase";
 import UserContext from "../../Context/UserContext";
+import OnAuth from "../utils/OnAuth";
 
 const auth = getAuth(app);
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [learnMore, setLearnMore] = useState(false);
-  const { login, setlogin } = useContext(UserContext);
+
+  // useref for email, passwaor and name extract
+  const name = useRef();
   const email = useRef();
   const password = useRef();
   const [valid, setvalid] = useState(null);
+
+  // store data state
+  const { user, setUser } = useContext(UserContext);
+  const { islogin, setIslogin } = useContext(UserContext);
 
   const validateEntry = () => {
     validate(email.current.value, password.current.value);
     setvalid(validate(email.current.value, password.current.value));
 
     if (validate(email.current.value, password.current.value) == null) {
-      // console.log("ll");
+      // firebase signin
       signInWithEmailAndPassword(
         auth,
         email.current.value,
@@ -28,43 +35,54 @@ const SignIn = () => {
       )
         .then((userCredential) => {
           // Signed up
-          alert("user Signed In");
-          const user = userCredential.user;
-          // console.log(user);
-          setlogin({ name: email.current.value, gmail: email.current.value });
+          const userdata = userCredential.user;
+
+          console.log(userdata.email);
+          // update context
+          setUser([userdata.email, name.current.value]);
+          console.log(user);
+          setIslogin(true);
           navigate("/browse");
-          // ...
         })
         .catch((error) => {
           console.log(error);
           const errorCode = error.code;
           alert("Incorrect I'd or Password");
           const errorMessage = error.message;
-          // ..
+          // update store in case
+          setIslogin(false);
         });
     }
   };
 
   return (
     <div className="lg:w-full lg:flex md:w-full md:flex justify-center">
+      <OnAuth />
       <div className="pt-[66px] px-8 lg:w-[460px] lg:h-[600px] lg:mt-[100px] md:w-[420px] md:h-[630px] md:mt-[80px] bg-black opacity-[0.87]">
         <h1 className="text-white text-3xl font-semibold">Sign In</h1>
         <div className="mt-7">
           <form onSubmit={(e) => e.preventDefault()} action="">
-            <div>
+            <div className="text-white">
+              <input
+                ref={name}
+                required
+                className="outline-none px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
+                type="text"
+                placeholder="User Name"
+              />
               <input
                 ref={email}
                 required
-                className="px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
+                className="outline-none px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
                 type="email"
-                placeholder="Email or phone number"
+                placeholder="Email"
               />
             </div>
             <div>
               <input
                 ref={password}
                 required
-                className="px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
+                className="outline-none px-4 py-3 rounded-md mb-4 w-[100%] bg-[#333333]"
                 type="password"
                 placeholder="Password"
               />
