@@ -57,7 +57,6 @@ const SignIn = () => {
 
   return (
     <div className="lg:w-full lg:flex md:w-full md:flex justify-center">
-      <OnAuth/>
       <div className="pt-[66px] px-8 lg:w-[460px] lg:h-[600px] lg:mt-[100px] md:w-[420px] md:h-[630px] md:mt-[80px] bg-black opacity-[0.87]">
         <h1 className="text-white text-3xl font-semibold">Sign In</h1>
         <div className="mt-7">
