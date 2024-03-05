@@ -14,6 +14,7 @@ import SignIn from "./Login/SignIn";
 import Browse from "./Browse/Browse";
 
 import UserContext from "../Context/UserContext";
+import MainUI from "./MainUI/MainUI";
 
 const Body = () => {
   const router = createBrowserRouter([
@@ -53,7 +54,7 @@ const Body = () => {
       path: "/browse",
       children: [
         { path: "/browse", element: <Browse /> },
-        
+        { path: "/browse/1", element: <MainUI /> },
       ],
     },
   ]);

@@ -43,7 +43,7 @@ const Pagetwo = () => {
 
   return (
     <div>
-      <OnAuth />
+      
       <div className="">
         <div className="flex justify-between">
           <img

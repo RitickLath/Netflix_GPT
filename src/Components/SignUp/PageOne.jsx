@@ -2,12 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FooterS from "./FooterS";
 import { useNavigate } from "react-router-dom";
+import OnAuth from "../utils/OnAuth";
 
 const PageOne = () => {
   const navigate = useNavigate();
 
   return (
     <>
+      {console.log("h")}
+      {/* <OnAuth /> */}
       <div>
         <div className="flex justify-between">
           <img
