@@ -7,7 +7,7 @@ const FAQs = () => {
   const navigate = useNavigate();
   const [input, setInput] = useState();
   return (
-    <div className="bg-[black] w-[100%] flex justify-center pb-20 z-50 -mt-48 lg:-mt-5">
+    <div className="bg-[black] w-[100%] flex justify-center pb-20 z-50 -mt-56 sm:-mt-44 lg:-mt-5">
       <div className="w-full z-50">
         <hr className=" bg-[#333333] h-2 border-0 " />
         {/* Heading FAQS */}
@@ -25,7 +25,7 @@ const FAQs = () => {
 
         {/* FOOTER */}
 
-        <h1 className="text-white text-center text-lg lg:text-xl px-12 pt-12">
+        {/* <h1 className="text-white text-center text-lg lg:text-xl px-12 pt-12">
           Ready to watch? Enter your email to create or restart your membership.
         </h1>
         <div className="lg:flex lg:justify-center lg:items-center md:flex md:justify-center flex justify-center mt-6">
@@ -52,7 +52,7 @@ const FAQs = () => {
               Get Started
             </button>
           </form>
-        </div>
+        </div> */}
         <hr className="mt-12 lg:mt-28 md:mt-[4.4rem] bg-[#232323] h-2 border-0" />
       </div>
 

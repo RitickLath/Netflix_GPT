@@ -9,7 +9,7 @@ const Home_Login = () => {
 
   return (
     <div className="">
-      <div className="flex justify-center mt-[18%] lg:mt-[12%] ">
+      <div className="flex justify-center mt-[25%] sm:mt-0 lg:mt-[12%] ">
         <div className="z-10  text-white">
           {/* text */}
           <div>
@@ -30,7 +30,7 @@ const Home_Login = () => {
           {/* input box */}
           {/* lg:flex lg:justify-center lg:items-center md:flex md:justify-center flex justify-center */}
           <div className="text-center  mt-4 lg:flex md:flex md:justify-center lg:justify-center">
-            <form className="px-12" action="">
+            <form className="px-20" action="">
               <input
                 value={input}
                 onChange={(e) => {
