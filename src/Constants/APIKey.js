@@ -8,5 +8,3 @@ export const options = {
 };
 
 export const Openkey = "";
-// "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"
-
