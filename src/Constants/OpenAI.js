@@ -1,7 +1,8 @@
 import OpenAI from "openai";
+import { Openkey } from "./APIKey";
 // Open AI API Call
 
 export const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: Openkey,
   dangerouslyAllowBrowser: true, // This is the default and can be omitted
 });
