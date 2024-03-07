@@ -21,6 +21,7 @@ const SignIn = () => {
   // store data state
   const { user, setUser } = useContext(UserContext);
   const { islogin, setIslogin } = useContext(UserContext);
+  const { setName } = useContext(UserContext);
 
   const validateEntry = () => {
     validate(email.current.value, password.current.value);
@@ -40,6 +41,7 @@ const SignIn = () => {
           console.log(userdata.email);
           // update context
           setUser([userdata.email, name.current.value]);
+          setName(name.current.value);
           console.log(user);
           setIslogin(true);
           navigate("/browse");

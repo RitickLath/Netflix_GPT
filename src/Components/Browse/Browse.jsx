@@ -7,8 +7,9 @@ import OnAuth from "../utils/OnAuth";
 const Browse = () => {
   const id = useRef(1);
   const [show, setShow] = useState(true); // to show the hidden div
-  const input = useRef(null);
+  const input = useRef("User2");
   const { user, setUser } = useContext(UserContext);
+  const { name, setName } = useContext(UserContext);
 
   const handleAccount = () => {
     setShow(false);
@@ -23,7 +24,7 @@ const Browse = () => {
   return (
     <div className="bg-[#141414] w-full h-screen bg-gradient-to-b from-black to-[#141414] to-10% flex justify-center items-center">
       <OnAuth />
-      <div>
+      <div className="flex items-center">
         {show && (
           <div className="">
             <h1 className="text-white text-3xl lg:text-5xl lg:pb-4 text-center pb-3">
@@ -31,21 +32,17 @@ const Browse = () => {
             </h1>
 
             <div className="flex">
-              <AccountIcon name={user?.[0] || "User1"} id={1} />
+              <AccountIcon name={name || "User1"} id={1} />
 
               {/* Conditional rendering  */}
 
               {id.current > 1 && (
-                <AccountIcon name={user?.[1] || "User2"} id={1} />
+                <AccountIcon name={"User-2"} id={1} />
               )}
 
-              {id.current > 2 && (
-                <AccountIcon name={user?.[2] || "User3"} id={1} />
-              )}
+              {id.current > 2 && <AccountIcon name={"User3"} id={1} />}
 
-              {id.current > 3 && (
-                <AccountIcon name={user?.[3] || "User4"} id={1} />
-              )}
+              {id.current > 3 && <AccountIcon name={"User4"} id={1} />}
 
               {/* Update Profile and add profile */}
               {id.current < 4 && (

@@ -52,7 +52,7 @@ const Display = ({ result }) => {
       };
       fetchTitle();
     }
-  }, [result]);
+  }, []);
 
   return (
     <div className="">
