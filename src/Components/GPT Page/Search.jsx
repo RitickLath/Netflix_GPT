@@ -27,7 +27,7 @@ const Search = ({ result, setResult }) => {
 
     // // Creating the prompt
 
-    const Prompt = `Act as a movie recommendation system and suggest some movies for the query ${UserRequirement}" only give me names of only 7 movies comma seperated like the example result: Don, Gadar, Hero, Sholay, Koi mil gaya, om shanti om, Ek tha tiger`;
+    const Prompt = `Act as a movie recommendation system and suggest some movies for the query ${UserRequirement}" only give me names of only 15 movies comma seperated like the example result: Don, Gadar, Hero, Sholay, Koi mil gaya, om shanti om, Ek tha tiger`;
 
     // Pass the prompt to OpenAI to get the best result
     const data = main(Prompt);
