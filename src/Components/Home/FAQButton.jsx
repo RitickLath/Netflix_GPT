@@ -11,7 +11,7 @@ const FAQButton = ({ question, answer }) => {
         onClick={() => setelected(!selected)}
         className="bg-[#414141] text-white px-8 w-[88%] lg:w-[75%]"
       >
-        <h1 className="flex justify-between py-3 md:py-4 lg:py-5 text-2xl">
+        <h1 className="flex justify-between py-[0.7rem] md:py-3 lg:py-4 text-xl sm:text-2xl">
           {question} <span>{!selected ? "+" : "x"}</span>
         </h1>
       </button>

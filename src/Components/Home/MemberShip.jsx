@@ -9,11 +9,11 @@ const Home_Login = () => {
 
   return (
     <div className="">
-      <div className="flex justify-center mt-[15%] lg:mt-[12%] ">
+      <div className="flex justify-center mt-[18%] lg:mt-[12%] ">
         <div className="z-10  text-white">
           {/* text */}
           <div>
-            <h1 className="mx-16 text-center text-[1.87rem] lg:text-[3.5rem] font-bold">
+            <h1 className="mx-12 text-center text-[1.87rem] lg:text-[3.5rem] font-bold">
               Unlimited movies, TV shows and more
             </h1>
             {/* h2 */}
@@ -29,8 +29,8 @@ const Home_Login = () => {
 
           {/* input box */}
           {/* lg:flex lg:justify-center lg:items-center md:flex md:justify-center flex justify-center */}
-          <div className="text-center  mt-8 lg:flex md:flex md:justify-center lg:justify-center">
-            <form className="" action="">
+          <div className="text-center  mt-4 lg:flex md:flex md:justify-center lg:justify-center">
+            <form className="px-12" action="">
               <input
                 value={input}
                 onChange={(e) => {
