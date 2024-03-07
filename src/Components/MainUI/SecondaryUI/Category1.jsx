@@ -7,15 +7,18 @@ const Category1 = () => {
 
   return (
     <div className="pl-10">
-      {console.log("Now Playing")}
-      {console.log(movieList)}
       <h1 className="text-2xl mb-4 font-semibold ">Now Playing</h1>
       <div className="">
         {movieList && (
           <div className="flex overflow-x-scroll">
             <div className="flex space-x-3">
+              {console.log(movieList?.[0]?.original_title)}
               {movieList.map((movie) => (
-                <MovieCard key={movie.id} imgId={movie.poster_path} />
+                <MovieCard
+                  key={movie.id}
+                  imgId={movie.poster_path}
+                  MovieName={movie?.original_title}
+                />
               ))}
             </div>
           </div>

@@ -23,7 +23,6 @@ const Category2 = ({ page, topic }) => {
     }
 
     fetchData();
-    console.log("popualar");
   }, []);
   if (!popular) {
     return;
@@ -31,14 +30,13 @@ const Category2 = ({ page, topic }) => {
 
   return (
     <div className="pl-10 mt-8">
-      {console.log(popular)}
       <h1 className="text-2xl mb-4 font-semibold ">{topic}</h1>
       <div className="">
         {popular && (
           <div className="flex overflow-x-scroll scroll">
             <div className="flex space-x-3">
-              {popular.map((movie) => (
-                <MovieCard key={movie.id} imgId={movie.poster_path} />
+              {popular.map((movie, i) => (
+                <MovieCard key={movie.id} imgId={movie.poster_path} MovieName={movie?.original_title}/>
               ))}
             </div>
           </div>

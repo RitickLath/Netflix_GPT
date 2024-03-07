@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import Header from "./Header";
+import Header from "./HeaderInside";
 import BgVideo from "./BgVideo";
 import { options } from "../../../Constants/APIKey";
 import Description from "./Description";
@@ -43,6 +43,12 @@ const PrimaryUI = () => {
       {/* {console.log("Movie list")}
       {console.log(movieList)} */}
       <Header />
+      <h1 className="text-white">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+        obcaecati consequatur iusto doloremque. Odio hic, veritatis voluptas
+        recusandae accusamus temporibus cum delectus corrupti animi adipisci
+        exercitationem, incidunt libero quasi neque.
+      </h1>
       <BgVideo mute={mute} id={nowPlay?.[1]} />
       <Description
         mute={mute}
