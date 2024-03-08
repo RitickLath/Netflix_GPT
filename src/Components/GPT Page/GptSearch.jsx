@@ -25,7 +25,7 @@ const GptSearch = () => {
                   className="relative mx-2 mt-[0.6rem] lg:mt-[1rem] text-[1.3rem] font-semibold text-white"
                 />
                 {showdiv && (
-                  <p className="absolute bottom-7 right-6 w-[300px] rounded-md font-normal bg-white text-left text-xs text-black p-2">
+                  <p className="absolute z-[100] bottom-7 right-6 w-[300px] rounded-md font-normal bg-white text-left text-xs text-black p-2">
                     Share your movie vision and get personalized
                     recommendations. Just describe your ideal pick, and our
                     GPT-powered system will find the perfect match for your
