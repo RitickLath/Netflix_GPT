@@ -40,7 +40,7 @@ const Description = ({ title, description, mute, setmute }) => {
             <span> More Info</span>
           </button>
           {isHovered && (
-            <div className="absolute top-14 left-0 bg-gray-100 text-gray-800 p-2 rounded-md shadow-md text-xs sm:text-sm">
+            <div className="absolute z-50 top-14 left-0 bg-gray-100 text-gray-800 p-2 rounded-md shadow-md text-xs sm:text-sm">
               {description}
             </div>
           )}

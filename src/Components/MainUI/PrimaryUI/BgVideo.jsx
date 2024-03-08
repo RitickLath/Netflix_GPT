@@ -41,7 +41,7 @@ const BgVideo = ({ id, mute }) => {
   return (
     <div className="">
       <iframe
-        className="w-full aspect-video z-10 -mt-24"
+        className="w-full aspect-video z-10 -mt-32"
         //key is the id of video, autoplay=1 ensure it plays in bg automatically , mute=1 make it mute , loop=1 make it go in loop and playlist gives what to play on loop
         src={`https://www.youtube.com/embed/${key}?autoplay=1&mute=${mute}&loop=1&playlist=${key}`}
         title="YouTube video player"
