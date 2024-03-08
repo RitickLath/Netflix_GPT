@@ -29,8 +29,8 @@ const Category2 = ({ page, topic }) => {
   }
 
   return (
-    <div className="pl-10 mt-8">
-      <h1 className="text-2xl mb-4 font-semibold ">{topic}</h1>
+    <div className="pl-0 mt-8">
+      <h1 className="text-2xl pl-2 font-semibold ">{topic}</h1>
       <div className="">
         {popular && (
           <div className="flex overflow-x-scroll scroll">

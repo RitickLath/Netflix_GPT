@@ -17,7 +17,7 @@ const Description = ({ title, description, mute, setmute }) => {
   }
 
   return (
-    <div className="z-10 pt-6 lg:-mt-48 lg:pb-20 w-full px-12 text-white bg-[#141414]">
+    <div className="z-10 pt-3 lg:-mt-48 lg:pb-20 w-full px-3 text-white bg-[#141414]">
       <div className="">
         <h1 className="text-xl md:text-3xl lg:text-4xl">{title}</h1>
 

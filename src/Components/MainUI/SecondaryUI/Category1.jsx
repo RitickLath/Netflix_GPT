@@ -6,8 +6,8 @@ const Category1 = () => {
   const { movieList, setMovieList } = useContext(UserContext);
 
   return (
-    <div className="pl-10">
-      <h1 className="text-2xl mb-4 font-semibold ">Now Playing</h1>
+    <div className="">
+      <h1 className="pl-2 text-2xl font-semibold ">Now Playing</h1>
       <div className="">
         {movieList && (
           <div className="flex overflow-x-scroll">

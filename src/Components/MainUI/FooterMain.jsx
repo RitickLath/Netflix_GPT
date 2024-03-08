@@ -27,7 +27,7 @@ const FooterMain = () => {
         <li className="cursor-pointer">Cookie Preferences</li>
         <li className="cursor-pointer">Contact Us</li>
       </div>
-      <div className="text-xs sm:text-sm flex w-full justify-center mt-10 pb-2 text-white">
+      <div className="text-xs sm:text-sm flex w-full justify-center mt-10 text-white">
         Powered by @Ritick Lath
       </div>
     </div>

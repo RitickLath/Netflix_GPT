@@ -57,10 +57,13 @@ const Display = ({ result }) => {
   return (
     <div className="">
       {postersArray && (
-        <div className="mt-12 flex flex-wrap justify-center p-3">
-          {postersArray.map((id, i) => (
-            <MovieCard key={id} imgId={id} MovieName={movieTitle[i]} />
-          ))}
+        <div>
+          <h1 className="mt-5 text-2xl pl-2 font-semibold ">Movie Matches</h1>
+          <div className=" flex overflow-scroll p-3 pl-1 pt-0">
+            {postersArray.map((id, i) => (
+              <MovieCard key={id} imgId={id} MovieName={movieTitle[i]} />
+            ))}
+          </div>
         </div>
       )}
     </div>

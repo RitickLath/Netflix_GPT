@@ -7,10 +7,10 @@ const MovieCard = ({ imgId, MovieName }) => {
     <div
       onMouseEnter={() => setHoverEvent(true)}
       onMouseLeave={() => setHoverEvent(false)}
-      className="lg:h-[130px] sm:h-[130px] md:h-[120px] h-[110px] aspect-video m-2 relative"
+      className="lg:h-[130px] sm:h-[130px] md:h-[120px] h-[110px] aspect-video m-2 mt-1 relative"
     >
       <img
-        className={`h-full w-full ${hoverEvent ? "opacity-30" : ""}`}
+        className={`rounded-md h-full w-full ${hoverEvent ? "opacity-30" : ""}`}
         src={"https://image.tmdb.org/t/p/w500" + imgId}
         alt=""
       />

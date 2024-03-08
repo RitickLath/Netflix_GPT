@@ -34,16 +34,14 @@ const Search = ({ result, setResult }) => {
   };
   return (
     <div className="w-full flex justify-center mt-4">
-      {/* {console.log(result)} */}
-
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="flex space-x-3"
+        className="mx-4 w-full flex md:flex lg:flex justify-center space-x-3"
         action=""
       >
         <input
           ref={input}
-          className="outline-none px-3 w-[300px] sm:w-[350px] md:w-[400px] lg:w-[500px] py-3 rounded-sm text-black"
+          className="outline-none max-w-[400px] flex-grow px-3 py-3 rounded-sm text-black"
           type="text"
           placeholder="What would you like to watch today?"
         />
