@@ -43,7 +43,6 @@ const Pagetwo = () => {
 
   return (
     <div>
-      
       <div className="">
         <div className="flex justify-between">
           <img
@@ -51,17 +50,17 @@ const Pagetwo = () => {
             src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
             alt="Netflix Logo"
           />
-          <button className="px-6  font-bold">
+          <button className="px-3 sm:px-6  font-bold">
             <Link to="/login">Sign In</Link>
           </button>
         </div>
         <hr className="-mt-1" />
       </div>
-      <div className="text-center pb-24 flex items-center w-full mt-[5vh] text-[#333333]">
+      <div className="text-center px-4 pb-24 flex items-center w-full mt-[5vh] text-[#333333]">
         <div className="w-[450px] mx-auto">
           <h3 className="mt-4 text-left">STEP 2 OF 3</h3>
-          <h1 className="text-left text-4xl font-bold  mt-2">
-            Create a password to start your membership
+          <h1 className="text-left text-2xl  font-bold  mt-2">
+            Create a password to start <br /> your membership
           </h1>
           <p className="text-left mt-3 font-normal text-xl">
             Just a few more steps and you're done! <br /> We hate paperwork,
@@ -82,7 +81,7 @@ const Pagetwo = () => {
               type="text"
               required
               placeholder="Enter your Name"
-              className={`outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
+              className={`outline-none px-3 border-[1.8px] w-[100%] min-w-[320px] py-3 rounded-sm ${
                 /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(gmail)
                   ? "border-[#688962]"
                   : "border-[red]"
@@ -99,7 +98,7 @@ const Pagetwo = () => {
               name=""
               id=""
               placeholder="Enter your Email"
-              className={`mt-3 outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
+              className={`mt-3 outline-none px-3 border-[1.8px] -mx-1 w-[100%] min-w-[320px] py-3 rounded-sm ${
                 /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(gmail)
                   ? "border-[#688962]"
                   : "border-[red]"
@@ -114,7 +113,7 @@ const Pagetwo = () => {
               type="password"
               required
               placeholder="Add a Password"
-              className={`mt-3 outline-none px-3 border-[1.8px] -mx-1 w-[450px] py-3 rounded-sm ${
+              className={`mt-3 outline-none px-3 border-[1.8px] -mx-1 w-[100%] min-w-[320px] py-3 rounded-sm ${
                 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/.test(
                   Password
                 )

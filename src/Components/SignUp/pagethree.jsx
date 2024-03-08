@@ -25,7 +25,7 @@ const Pagethree = () => {
         <hr className="-mt-1" />
       </div>
 
-      <div className="pb-24 text-left flex items-center w-full mt-[10vh] text-[#333333]">
+      <div className="pb-24 px-4 text-left flex items-center w-full mt-[10vh] text-[#333333]">
         <div className="w-[450px]  mx-auto">
           <h3 className="mt-4 text-left">STEP 3 OF 3</h3>
           <h1 className="text-3xl font-semibold  mt-2">Choose how to pay</h1>
@@ -38,15 +38,15 @@ const Pagethree = () => {
             Cancel easily online.
           </p>
           <div>
-            <button className="text-left mt-3 w-[450px] rounded-sm py-3 text-xl px-3 border-2">
+            <button className="text-left mt-3 w-[100%] rounded-sm py-3 text-xl px-3 border-2">
               Credit or Debit Card
             </button>
-            <button className="text-left mt-3 w-[450px] rounded-sm py-3 text-xl px-3 border-2">
+            <button className="text-left mt-3 w-[100%] rounded-sm py-3 text-xl px-3 border-2">
               UPI Autopay
             </button>
             <button
               onClick={browse}
-              className="text-center mt-3 w-[450px] rounded-sm py-3 text-xl px-3 border-2 bg-[#D9242F] text-white"
+              className="text-center mt-3 w-[100%] rounded-sm py-3 text-xl px-3 border-2 bg-[#D9242F] text-white"
             >
               Continue without Subscription
             </button>
