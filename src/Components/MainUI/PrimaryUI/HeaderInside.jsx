@@ -24,17 +24,17 @@ const HeaderInside = () => {
   };
 
   return (
-    <div className="z-50 absolute top-0 w-full flex justify-between items-center px-8  pt-2">
+    <div className="z-50 absolute top-0 w-full flex justify-between items-center px-8 pr-3 pt-4">
       <img
-        className=" w-[100px]"
+        className=" w-[100px] bg-gradient-to-br from-black rounded-2xl"
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
         alt=""
       />
-
       <div className="flex space-x-3">
-        <button className="" onClick={signOutUser}>
+        <button className="flex" onClick={signOutUser}>
+          <span className="text-white pt-1">Sign Out</span>
           <img
-            className="w-[35px] h-[35px] rounded-md"
+            className="w-[35px] ml-2 h-[35px] rounded-md"
             src="https://occ-0-2483-3647.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
             alt="signout"
           />

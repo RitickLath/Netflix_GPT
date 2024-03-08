@@ -19,7 +19,7 @@ const Description = ({ title, description, mute, setmute }) => {
   return (
     <div className="z-10 pt-3 lg:-mt-48 lg:pb-20 w-full px-3 text-white bg-[#141414]">
       <div className="">
-        <h1 className="text-xl md:text-3xl lg:text-4xl">{title}</h1>
+        <h1 className="text-xl md:text-3xl lg:text-4xl font-bold">{title}</h1>
 
         <div className={`relative flex space-x-2 mt-2 ${!toggle && ""}`}>
           <button
