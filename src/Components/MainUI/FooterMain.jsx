@@ -13,7 +13,7 @@ const FooterMain = () => {
         <FaTwitter className="text-white text-2xl cursor-pointer" />
         <FaYoutube className="text-white text-2xl cursor-pointer" />
       </div>
-      <div className="list-none grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 lg:px-32 gap-4 ">
+      <div className="list-none grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 lg:px-32 gap-4 text-sm ">
         <li className="cursor-pointer">Audio Description</li>
         <li className="cursor-pointer">Gift Cards</li>
         <li className="cursor-pointer">Investor Relations</li>
@@ -26,6 +26,9 @@ const FooterMain = () => {
         <li className="cursor-pointer">Privacy</li>
         <li className="cursor-pointer">Cookie Preferences</li>
         <li className="cursor-pointer">Contact Us</li>
+      </div>
+      <div className="text-xs sm:text-sm flex w-full justify-center mt-10 pb-2 text-white">
+        Powered by @Ritick Lath
       </div>
     </div>
   );

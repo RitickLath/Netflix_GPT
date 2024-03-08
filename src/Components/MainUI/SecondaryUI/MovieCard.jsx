@@ -14,7 +14,7 @@ const MovieCard = ({ imgId, MovieName }) => {
         src={"https://image.tmdb.org/t/p/w500" + imgId}
         alt=""
       />
-      {hoverEvent && (
+      {hoverEvent && MovieName && (
         <h1 className="absolute top-0 left-1 text-lg sm:text-2xl">
           {MovieName}
         </h1>
