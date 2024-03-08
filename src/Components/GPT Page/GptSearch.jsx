@@ -8,9 +8,9 @@ const GptSearch = () => {
   const [showdiv, setShowDiv] = useState(false);
 
   return (
-    <div className="w-full bg-[#141414] text-white">
+    <div className="w-full bg-[#141414] text-white overflow-hidden">
       <div className="w-full text-center">
-        <h1 className="text-[#D9232E] relative flex justify-center pt-12 px-4 text-2xl md:text-3xl lg:text-4xl font-bold">
+        <h1 className="text-[#D9232E] relative flex justify-center pt-12 px-4 text-[1.3rem] sm:text-3xl md:text-3xl lg:text-4xl font-bold">
           GPT-Powered Recommendations{" "}
           <div className="relative">
             <div className="absolute">
