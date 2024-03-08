@@ -43,7 +43,7 @@ const Search = ({ result, setResult }) => {
           ref={input}
           className="outline-none max-w-[400px] flex-grow px-3 py-3 rounded-sm text-black"
           type="text"
-          placeholder="What would you like to watch today?"
+          placeholder="Your idea of Netflix and Chill...."
         />
         <button
           onClick={searchForInput}
